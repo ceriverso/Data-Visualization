@@ -1,8 +1,6 @@
 import NavBar from "./NavBar";
 import Header from "./Header";
 import Footer from "./Footer";
-import Method from "./Method";
-//import Home from "./Home";
 
 
 const layoutStyle = {
@@ -19,17 +17,12 @@ const contentStyle = {
 };
 
 function Layout({ children }) {
+    
     return (
-        // <>
-        // <NavBar />
-        // <Home>{children}</Home>
-        // <Footer />
-        // </>
-
+        
         <div className="Layout" style={layoutStyle}>
             <Header />
             <NavBar />
-            <Method />
             <div className="Content" style={contentStyle}>
                 {children}
             </div>
