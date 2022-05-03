@@ -1,38 +1,24 @@
 import { useState, useEffect } from "react";
 import Layout from "../src/components/Layout";
+import Array from "./array";
 
 
 function Selection(props) {
 
-    const [newArray, setNewArray] = useState([]);
-
-    useEffect(() =>{
-        const getArray = () => {
-        const max = 10;
-        const arr = [];
-
-        for (let i = 0; i < max;) {
-            let num = Math.floor(Math.random() * max + 1)
-            while (arr.includes(num) === false) {
-                arr.push(num)
-                i++
-            }
-        }
-        
-       setNewArray(arr)
-       
-    }
-    getArray()
-    }, [])
-    console.log("newArray",newArray)
+    const [data, setData] = useState('');
     
+
+const childToParent = (newArray) => {
+   setData(newArray)
+}
            
 
     return (
         <Layout>
             {/* {`Home`} */}
             Selection
-            {newArray}
+            <Array childToParent={childToParent} />
+            {data}
         </Layout>
     )
 }
