@@ -1,15 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 
-function Array({childToParent}) {
-    
-    const [newArray, setNewArray] = useState([]);
+
+function Array({ setArr, refresh }) {
 
     useEffect(() => {
         const getArray = () => {
             const max = 10;
             const arr = [];
-
             for (let i = 0; i < max;) {
                 let num = Math.floor(Math.random() * max + 1)
                 while (arr.includes(num) === false) {
@@ -17,22 +15,10 @@ function Array({childToParent}) {
                     i++
                 }
             }
-
-            setNewArray(arr)
-            childToParent(arr)
+            setArr(arr)
         }
         getArray()
-        
-    }, [])
-    console.log("newArray", newArray)
-
-    // return (
-    //     <div>
-    //         {/* <button primary onClick={() => childToParent(newArray)}>Click Child</button> */}
-          
-    //     </div>
-    // )
-
+    }, [refresh])
 }
 
 export default Array

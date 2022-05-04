@@ -4,7 +4,12 @@ import Layout from "../src/components/Layout";
 
 function Insertion(props) {
 
+const handleClick = () => {
+    Bubble(newArray)
+}
+
     const [newArray, setNewArray] = useState([]);
+    const [data, setData] = useState('');
 
     useEffect(() =>{
         const getArray = () => {
@@ -26,6 +31,7 @@ function Insertion(props) {
     }, [])
     console.log("newArray",newArray)
     
+    
            
 
     return (
@@ -33,6 +39,7 @@ function Insertion(props) {
             {/* {`Home`} */}
             Insertion
             {newArray}
+            <button onClick={handleClick}>Sort Me</button>
         </Layout>
     )
 }
