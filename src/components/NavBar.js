@@ -1,22 +1,13 @@
 
 import Link from 'next/link';
+import style from '../css/navbar.module.css';
 
-
-const navBarStyle = {
-    display: "flex",
-    justifyContent: "space-evenly",
-    paddingTop: "2em",
-    backgroundColor: "red",
-    color: "white",
-    width: "100%",
-    height: "60px"
-};
 
 function NavBar() {
 
     return (
     
-            <div className="NavBar" style={navBarStyle}>
+            <div className={style.navBar} >
 
                 <div>
                     <Link href="/">

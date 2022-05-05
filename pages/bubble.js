@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from "../src/components/Layout";
 import Method from './method';
 import Array from './array';
+import style from '../src/css/array.module.css';
 
 function Bubble() {
 
@@ -38,6 +39,7 @@ function Bubble() {
     };
 
     const handleClick = async() => {
+        await new Promise(resolve => setTimeout(resolve, 500));
         let checked;
         do {
             checked = false
@@ -50,8 +52,10 @@ function Bubble() {
                     //Is only changed to true when there is a swap made
                     checked = true
                 }
+                setSorted(arr)
+                await new Promise(resolve => setTimeout(resolve, 500));
             }
-            setSorted(arr)
+            
             //If a swap is not made checked will not be true thus terminating the loop
             //Ensuring loop will not run on a sorted array more than once
         } while (checked)
@@ -59,7 +63,7 @@ function Bubble() {
 
 const display = arr.map((bar, index) => {
     return(
-        <div key={index}>
+        <div className={style.bar} key={index} style={{width:`${bar * 8}%`}}>
             {bar}
         </div>
     )

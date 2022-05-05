@@ -1,15 +1,8 @@
-const headerStyle = {
-    display: "flex",
-    justifyContent: "space-evenly",
-    paddingBottom: "1em",
-    backgroundColor: "blue",
-    color: "white",
-    width: "100%",
-    height: "50px"
-  };
+import styles from "../css/header.module.css";
+
   
   const Header = () => (
-    <div className="Header" style={headerStyle}>
+    <div className={styles.header} >
       <h1>Sorting Methods - Data Visualizer</h1>
     </div>
   );

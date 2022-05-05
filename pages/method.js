@@ -1,18 +1,13 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import style from '../src/css/method.module.css';
 
 
-const descriptionStyle = {
- backgroundColor: "black",
- border: "solid gray",
- color: "antiquewhite",
- minHeight: "100px",
- textAlign: "center"
-}
+
 function Method({method}) {
     
     return (
-        <div style={descriptionStyle}>
+        <div className={style.method}>
            
             <SyntaxHighlighter language="javascript" style={dark}>
                 {method}
