@@ -5,7 +5,9 @@ import Array from './array';
 import style from '../src/css/array.module.css';
 
 function Bubble() {
-
+useEffect(() => {
+    handleClick()
+})
     //Tells the method component what code to display 
     const codeString = `let checked;
     do {
@@ -26,7 +28,7 @@ function Bubble() {
 `;
 
     const [arr, setArr] = useState([]);
-    const [sorted, setSorted] = useState([]);
+    const [sorted, setSorted] = useState([arr]);
     const [refresh, setRefresh] = useState("false");
 
     
@@ -39,26 +41,21 @@ function Bubble() {
     };
 
     const handleClick = async() => {
-        let array = arr
         await new Promise(resolve => setTimeout(resolve, 500));
         let checked;
         do {
-            await new Promise(resolve => setTimeout(resolve, 1500));
             checked = false
-            for (let i = 0; i < array.length; i++) {
-                if (array[i] > array[i + 1]) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > arr[i + 1]) {
                     //Swap the elements in the array since element is less than the next element
-                    let tmp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = tmp;
+                    let tmp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = tmp;
                     //Is only changed to true when there is a swap made
-                    
                     checked = true
                 }
-                console.log(array)
-                setSorted(array)
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
+                setSorted(arr)
+                await new Promise(resolve => setTimeout(resolve, 500));
             }
             
             //If a swap is not made checked will not be true thus terminating the loop
@@ -66,7 +63,7 @@ function Bubble() {
         } while (checked)
     };
 
-const display = sorted.map((bar, index) => {
+const display = arr.map((bar, index) => {
     return(
         <div className={style.bar} key={index} style={{width:`${bar * 8}%`}}>
             {bar}
@@ -81,8 +78,7 @@ const display = sorted.map((bar, index) => {
             <Method method={codeString} />
             Bubble Sort
             <Array setArr={setArr} refresh={refresh} />
-             {display}
-            {sorted}
+            {display}
             <button onClick={handleClick}>Sort Me</button>
             <button onClick={refreshDisplay}>Refresh</button>
 
