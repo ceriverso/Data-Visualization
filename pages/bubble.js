@@ -5,10 +5,8 @@ import Array from './array';
 import style from '../src/css/array.module.css';
 
 function Bubble() {
-useEffect(() => {
-    handleClick()
-})
-    //Tells the method component what code to display 
+
+    //Tells the method component whatcode to display 
     const codeString = `let checked;
     do {
         checked = false
@@ -27,12 +25,25 @@ useEffect(() => {
     } while (checked)
 `;
 
-    const [arr, setArr] = useState([]);
-    const [sorted, setSorted] = useState([arr]);
-    const [refresh, setRefresh] = useState("false");
-
+    const [array, setArray] = useState([]);
+    const [sorted, setSorted] = useState([]);
+    const [refresh, setRefresh] = useState("false");    
     
-    
+    useEffect(() => {
+        const getArray = () => {
+            const max = 10;
+            const arr = [];
+            for (let i = 0; i < max;) {
+                let num = Math.floor(Math.random() * max + 1)
+                while (arr.includes(num) === false) {
+                    arr.push(num)
+                    i++
+                }
+            }
+            setArray(arr)
+        }
+        getArray()
+    }, [refresh])
 
     //Updates the refresh state causing useEffect in array component to render a new array
     //Then clears the rendered sorted array by setting state to empty array
@@ -41,11 +52,12 @@ useEffect(() => {
     };
 
     const handleClick = async() => {
-        await new Promise(resolve => setTimeout(resolve, 500));
+        let arr = array
         let checked;
         do {
             checked = false
             for (let i = 0; i < arr.length; i++) {
+                await new Promise(resolve => setTimeout(resolve, 3000));
                 if (arr[i] > arr[i + 1]) {
                     //Swap the elements in the array since element is less than the next element
                     let tmp = arr[i];
@@ -54,8 +66,9 @@ useEffect(() => {
                     //Is only changed to true when there is a swap made
                     checked = true
                 }
-                setSorted(arr)
-                await new Promise(resolve => setTimeout(resolve, 500));
+                console.log(arr)
+                setArray(arr)
+                
             }
             
             //If a swap is not made checked will not be true thus terminating the loop
@@ -63,7 +76,7 @@ useEffect(() => {
         } while (checked)
     };
 
-const display = arr.map((bar, index) => {
+const display = array.map((bar, index) => {
     return(
         <div className={style.bar} key={index} style={{width:`${bar * 8}%`}}>
             {bar}
@@ -77,8 +90,9 @@ const display = arr.map((bar, index) => {
         <Layout>
             <Method method={codeString} />
             Bubble Sort
-            <Array setArr={setArr} refresh={refresh} />
-            {display}
+            {/* <Array array={array} setArray={setArray} sorted={sorted} refresh={refresh} /> */}
+            {/* {display} */}
+            {array}
             <button onClick={handleClick}>Sort Me</button>
             <button onClick={refreshDisplay}>Refresh</button>
 

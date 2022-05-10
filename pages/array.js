@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 
 
-function Array({ setArr, refresh }) {
+function Array({ array, setArray, sorted, refresh }) {
 
     useEffect(() => {
         const getArray = () => {
@@ -15,10 +15,13 @@ function Array({ setArr, refresh }) {
                     i++
                 }
             }
-            setArr(arr)
+            setArray(arr)
         }
         getArray()
-    }, [refresh])
+    }, [refresh, sorted])
+    return(
+        <div>{array}</div>
+    )
 }
 
 export default Array
