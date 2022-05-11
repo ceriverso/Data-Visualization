@@ -26,54 +26,40 @@ function Bubble() {
 `;
 
     const [array, setArray] = useState([]);
-    const [sorted, setSorted] = useState([]);
+    const [count, setCount] = useState([0]);
     const [refresh, setRefresh] = useState("false");    
     
-    useEffect(() => {
-        const getArray = () => {
-            const max = 10;
-            const arr = [];
-            for (let i = 0; i < max;) {
-                let num = Math.floor(Math.random() * max + 1)
-                while (arr.includes(num) === false) {
-                    arr.push(num)
-                    i++
-                }
-            }
-            setArray(arr)
-        }
-        getArray()
-    }, [refresh])
-
     //Updates the refresh state causing useEffect in array component to render a new array
     //Then clears the rendered sorted array by setting state to empty array
     const refreshDisplay = () => {
         refresh == "false" ? setRefresh("true") : setRefresh("false");
     };
 
-    const handleClick = async() => {
-        let arr = array
-        let checked;
-        do {
-            checked = false
-            for (let i = 0; i < arr.length; i++) {
-                await new Promise(resolve => setTimeout(resolve, 3000));
-                if (arr[i] > arr[i + 1]) {
-                    //Swap the elements in the array since element is less than the next element
-                    let tmp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = tmp;
-                    //Is only changed to true when there is a swap made
-                    checked = true
-                }
-                console.log(arr)
-                setArray(arr)
+    const handleClick = () => {
+        setCount(count+1)
+        // let arr = array
+        // let checked;
+        // do {
+        //     checked = false
+        //     for (let i = count; i < count+1; i++) {
                 
-            }
-            
-            //If a swap is not made checked will not be true thus terminating the loop
-            //Ensuring loop will not run on a sorted array more than once
-        } while (checked)
+        //         if (arr[i] > arr[i + 1]) {
+        //             //Swap the elements in the array since element is less than the next element
+        //             let tmp = arr[i];
+        //             arr[i] = arr[i + 1];
+        //             arr[i + 1] = tmp;
+        //             //Is only changed to true when there is a swap made
+        //             checked = true
+        //         }
+        //         console.log(arr)
+        //         setArray(arr)
+                
+                
+        //     }
+        //     setArray(arr)
+        //     //If a swap is not made checked will not be true thus terminating the loop
+        //     //Ensuring loop will not run on a sorted array more than once
+        // } while (checked)
     };
 
 const display = array.map((bar, index) => {
@@ -90,9 +76,9 @@ const display = array.map((bar, index) => {
         <Layout>
             <Method method={codeString} />
             Bubble Sort
-            {/* <Array array={array} setArray={setArray} sorted={sorted} refresh={refresh} /> */}
-            {/* {display} */}
-            {array}
+            {count}
+            <Array array={array} setArray={setArray} refresh={refresh} />
+            {display}
             <button onClick={handleClick}>Sort Me</button>
             <button onClick={refreshDisplay}>Refresh</button>
 
