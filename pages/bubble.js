@@ -25,7 +25,7 @@ function Bubble() {
     } while (checked)
 `;
 
-const { newRandomArray } = randomArray();
+const { arr } = randomArray();
     
     const [refresh, setRefresh] = useState("false");    
     const [sorted, setSorted] = useState([]);
@@ -37,13 +37,13 @@ const { newRandomArray } = randomArray();
 
     const test = (checked) => {
         checked = false;
-            for (let i = 0; i < newRandomArray.length; i++) {
+            for (let i = 0; i < arr.length; i++) {
                 
-                if (newRandomArray[i] > newRandomArray[i + 1]) {
+                if (arr[i] > arr[i + 1]) {
                     //Swap the elements in the array since element is less than the next element
-                    let tmp = newRandomArray[i];
-                    newRandomArray[i] = newRandomArray[i + 1];
-                    newRandomArray[i + 1] = tmp;
+                    let tmp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = tmp;
                     //Is only changed to true when there is a swap made
                     checked = true
                 }
@@ -56,15 +56,15 @@ const { newRandomArray } = randomArray();
         let checked;
         do {
           setTimeout( test ,1000)
-            console.log(newRandomArray)
-             setTimeout(setSorted(newRandomArray), 1000)   
+            console.log(arr)
+             setTimeout(setSorted(arr), 1000)   
             
             //If a swap is not made checked will not be true thus terminating the loop
             //Ensuring loop will not run on a sorted array more than once
         } while (checked)
       }
     
-const display = newRandomArray.map((bar, index) => {
+const display = arr.map((bar, index) => {
     return(
         <div className={style.bar} key={index} style={{width:`${bar * 8}%`}}>
             {bar}

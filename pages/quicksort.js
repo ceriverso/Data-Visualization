@@ -7,24 +7,24 @@ import randomArray from "./randomArray";
 function Quicksort() {
 
     //Tells the method component whatcode to display 
-    const codeString = `function swap(newRandomArray, leftIndex, rightIndex){
-        var temp = newRandomArray[leftIndex];
-        newRandomArray[leftIndex] = newRandomArray[rightIndex];
-        newRandomArray[rightIndex] = temp;
+    const codeString = `function swap(arr, leftIndex, rightIndex){
+        var temp = arr[leftIndex];
+        arr[leftIndex] = arr[rightIndex];
+        arr[rightIndex] = temp;
     }
-    function partition(newRandomArray, left, right) {
-        var pivot   = newRandomArray[Math.floor((right + left) / 2)], //middle element
+    function partition(arr, left, right) {
+        var pivot   = arr[Math.floor((right + left) / 2)], //middle element
             i       = left, //left pointer
             j       = right; //right pointer
         while (i <= j) {
-            while (newRandomArray[i] < pivot) {
+            while (arr[i] < pivot) {
                 i++;
             }
-            while (newRandomArray[j] > pivot) {
+            while (arr[j] > pivot) {
                 j--;
             }
             if (i <= j) {
-                swap(newRandomArray, i, j); //sawpping two elements
+                swap(arr, i, j); //sawpping two elements
                 i++;
                 j--;
             }
@@ -32,44 +32,44 @@ function Quicksort() {
         return i;
     }
     
-    function quickSort(newRandomArray, left, right) {
+    function quickSort(arr, left, right) {
         var index;
-        if (newRandomArray.length > 1) {
-            index = partition(newRandomArray, left, right); //index returned from partition
+        if (arr.length > 1) {
+            index = partition(arr, left, right); //index returned from partition
             if (left < index - 1) { //more elements on the left side of the pivot
-                quickSort(newRandomArray, left, index - 1);
+                quickSort(arr, left, index - 1);
             }
             if (index < right) { //more elements on the right side of the pivot
-                quickSort(newRandomArray, index, right);
+                quickSort(arr, index, right);
             }
         }
-        return newRandomArray;
+        return arr;
     }
     // first call to quick sort
-    var sortedArray = quickSort(newRandomArray, 0, newRandomArray.length - 1);
+    var sortedArray = quickSort(arr, 0, arr.length - 1);
 `;
 
     
-    const { newRandomArray } = randomArray();
+    const { arr } = randomArray();
 
-    function swap(newRandomArray, leftIndex, rightIndex){
-        var temp = newRandomArray[leftIndex];
-        newRandomArray[leftIndex] = newRandomArray[rightIndex];
-        newRandomArray[rightIndex] = temp;
+    function swap(arr, leftIndex, rightIndex){
+        var temp = arr[leftIndex];
+        arr[leftIndex] = arr[rightIndex];
+        arr[rightIndex] = temp;
     }
-    function partition(newRandomArray, left, right) {
-        var pivot   = newRandomArray[Math.floor((right + left) / 2)], //middle element
+    function partition(arr, left, right) {
+        var pivot   = arr[Math.floor((right + left) / 2)], //middle element
             i       = left, //left pointer
             j       = right; //right pointer
         while (i <= j) {
-            while (newRandomArray[i] < pivot) {
+            while (arr[i] < pivot) {
                 i++;
             }
-            while (newRandomArray[j] > pivot) {
+            while (arr[j] > pivot) {
                 j--;
             }
             if (i <= j) {
-                swap(newRandomArray, i, j); //sawpping two elements
+                swap(arr, i, j); //sawpping two elements
                 i++;
                 j--;
             }
@@ -77,21 +77,21 @@ function Quicksort() {
         return i;
     }
     
-    function quickSort(newRandomArray, left, right) {
+    function quickSort(arr, left, right) {
         var index;
-        if (newRandomArray.length > 1) {
-            index = partition(newRandomArray, left, right); //index returned from partition
+        if (arr.length > 1) {
+            index = partition(arr, left, right); //index returned from partition
             if (left < index - 1) { //more elements on the left side of the pivot
-                quickSort(newRandomArray, left, index - 1);
+                quickSort(arr, left, index - 1);
             }
             if (index < right) { //more elements on the right side of the pivot
-                quickSort(newRandomArray, index, right);
+                quickSort(arr, index, right);
             }
         }
-        return newRandomArray;
+        return arr;
     }
     // first call to quick sort
-    var sortedArray = quickSort(newRandomArray, 0, newRandomArray.length - 1);
+    var sortedArray = quickSort(arr, 0, arr.length - 1);
     
 
 
