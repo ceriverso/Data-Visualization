@@ -1,55 +1,19 @@
 import { useState, useEffect } from "react";
 import Layout from "../src/components/Layout";
 import Method from "./method";
+import randomArray from "./randomArray";
 
 function Merge(props){
 
-    const [newArray, setNewArray] = useState([]);
-
-    useEffect(() =>{
-        const getArray = () => {
-        const max = 10;
-        const arr = [];
-
-        for (let i = 0; i < max;) {
-            let num = Math.floor(Math.random() * max + 1)
-            while (arr.includes(num) === false) {
-                arr.push(num)
-                i++
-            }
-        }
-        
-       setNewArray(arr)
-       
-    }
-    getArray()
-    }, [])
-    console.log("newArray",newArray)
+    randomArray();
     
-       const codeString=`{useEffect(() =>{
-        const getArray = () => {
-        const max = 10;
-        const arr = [];
-
-        for (let i = 0; i < max;) {
-            let num = Math.floor(Math.random() * max + 1)
-            while (arr.includes(num) === false) {
-                arr.push(num)
-                i++
-            }
-        }
-        
-       setNewArray(arr)
-       
-    }
-    getArray()
-    }, [])}`    
+       const codeString=`CODE STRING`    
 
     return(
         <Layout>
             <Method method={codeString} />
             merge sort
-            {newArray}
+           {newRandomArray}
         </Layout>
     )
 }

@@ -1,5 +1,62 @@
 
+
+
+
+
 .bar{
-    background-color: black;
-    color: antiquewhite;
+    background-color: greenyellow;
+    margin-bottom: 1%;
+    font-size: x-large;
+}
+
+.container{
+    display: flex;
+    margin-top: 10%;
+}
+
+.leftDisplay{
+    width: 75%;
+}
+
+.rightDisplay{
+    width: 25%;
+}
+
+.newArray{
+    display: flex;
+    color: orange;
+    margin-bottom: 1em;
+}
+
+
+.row{
+    display: flex;
+}
+
+
+.text{
+    font-size: 1.7em;
+    color: red;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.textTwo{
+    font-size: 1.7em;
+    color: blue;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+
+.bottomText{
+    font-size: 1.7em;
+    color: greenyellow;
+    margin: 0;
+}
+
+.bottomTextTwo{
+    font-size: 1.7em;
+    color: orange;
+    margin: 0;
 }

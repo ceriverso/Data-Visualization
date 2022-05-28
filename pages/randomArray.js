@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 function randomArray(){
 
     const [newRandomArray, setNewRandomArray] = useState([]);
-
+    const [max, setMax] = useState(5);
+    const [refresh, setRefresh] = useState("false");   
     useEffect(() =>{
         const getArray = () => {
-        const max = 10;
+        //const max = 10;
         const arr = [];
 
         for (let i = 0; i < max;) {
@@ -21,10 +22,10 @@ function randomArray(){
        
     }
     getArray()
-    }, [])
+    }, [refresh, max])
     
     
-    return { newRandomArray, setNewRandomArray}
+    return { newRandomArray, setNewRandomArray, refresh, setRefresh, max, setMax}
 
 }
 
