@@ -19,7 +19,7 @@ function Bubble() {
     };
 
     async function bubbleSort() {
-        await new Promise(resolve => setTimeout(resolve, {speed}));
+        await new Promise(resolve => setTimeout(resolve, speed.x));
         const arr = newRandomArray;
         let checked;
 
@@ -28,7 +28,8 @@ function Bubble() {
             checked = false
             for (let i = 0; i < arr.length; i++) {
 
-                await new Promise(resolve => setTimeout(resolve, {speed}));
+                await new Promise(resolve => setTimeout(resolve, speed.x));
+                console.log(speed.x)
                 //The element we are testing turns red
                 document.getElementById(i).style.backgroundColor = "red";
                 document.getElementById(`caption${i}`).innerText = "<<<=== arr[i]"
@@ -41,10 +42,10 @@ function Bubble() {
 
                 if (arr[i] > arr[i + 1]) {
                     setText("If arr[i] is greater than arr[i + 1]")
-                   await new Promise(resolve => setTimeout(resolve, {speed}));
+                   await new Promise(resolve => setTimeout(resolve, speed.x));
                     setBottomText("They swap positions and the loop moves to the next element")
-                    await new Promise(resolve => setTimeout(resolve, {speed}));
-                   await new Promise(resolve => setTimeout(resolve, {speed}));
+                    await new Promise(resolve => setTimeout(resolve, speed.x));
+                   await new Promise(resolve => setTimeout(resolve, speed.x));
                     //Swap the elements in the array since element is less than the next element
                     let tmp = arr[i];
                     arr[i] = arr[i + 1];
@@ -52,12 +53,12 @@ function Bubble() {
                     //Is only changed to true when there is a swap made
                     checked = true
                 } else {
-                   await new Promise(resolve => setTimeout(resolve, {speed}));
+                   await new Promise(resolve => setTimeout(resolve, speed.x));
                     setText("");
                     setTextTwo("If arr[i] is less than arr[i + 1]");
-                   await new Promise(resolve => setTimeout(resolve, {speed}));
+                   await new Promise(resolve => setTimeout(resolve, speed.x));
                     setBottomTextTwo("They stay where they are and the loop continues to next element");
-                   await new Promise(resolve => setTimeout(resolve, {speed}));
+                   await new Promise(resolve => setTimeout(resolve, speed.x));
                 }
                 document.getElementById(i).style.backgroundColor = "greenyellow";
                 document.getElementById(`caption${i}`).innerText = "";
@@ -84,7 +85,7 @@ function Bubble() {
         return (
             <div className={style.row} key={index}>
 
-                <div className={style.bar} id={`${index}`} style={{ width: `${bar * 8}%`, height: `${bar * 8}%` }}>
+                <div className={style.bar} id={`${index}`} style={{ width: `${bar * 4}%`, height: `${bar * 8}%` }}>
                     {bar}
                 </div>
                 <span id={`caption${index}`}></span>
@@ -112,9 +113,24 @@ function Bubble() {
                 </div>
             </div>
             <div>
-      ({speed.x})
+      {speed.x}
       
       <Slider
+      styles={{
+        track: {
+          backgroundColor: 'blue'
+        },
+        active: {
+          backgroundColor: 'red'
+        },
+        thumb: {
+          width: 20,
+          height: 20
+        },
+        disabled: {
+          opacity: 0.5
+        }
+      }}
         axis="x"
         xmax={10000}
         x={speed.x}

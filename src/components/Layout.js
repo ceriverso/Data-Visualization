@@ -21,8 +21,8 @@ function Layout({ children }) {
     return (
         
         <div className="Layout" style={layoutStyle}>
-            <Header />
             <NavBar />
+            <Header />
             <div className="Content" style={contentStyle}>
                 {children}
             </div>

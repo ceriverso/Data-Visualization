@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Work Sans');
 
 .header{
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 1em;
-    background-color: blue;
-    color: white;
+    border: 2px solid;
+    border-color: #fcdf71;
+    font-family: "Work Sans", bold ;
+    color: #0098d3;
     width: 100%;
-    height: 50px
+    height: 150px
 }
