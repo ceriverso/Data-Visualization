@@ -5,13 +5,13 @@ import Footer from "./Footer";
 
 const layoutStyle = {
     display: "flex",
-    flexDirection: "column",
-    height: "100%",
+    flexFlow: "column",
+    height: "100vh",
     width: "100%"
 };
 
 const contentStyle = {
-    flex: 1,
+    flexGrow: 1,
     display: "flex",
     flexDirection: "column"
 };

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Tinos&family=Work+Sans&display=swap');
 
 .header{
     display: flex;
@@ -6,8 +5,7 @@
     justify-content: space-evenly;
     text-align: center;
     padding-bottom: 1em;
-    border: 2px solid;
-    border-color: #fcdf71;
+    
     font-family: 'Playfair Display', serif;
     color: #0098d3;
     width: 100%;

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '../components/Link';
 import style from '../css/navbar.module.css';
 
 

@@ -95,7 +95,7 @@ function Bubble() {
 
 
     return (
-        <Layout>
+        <div>
             <h1>Bubble Sort</h1>
 
             <Method method={"bubble"} />
@@ -159,7 +159,7 @@ function Bubble() {
             <button onClick={bubbleSort}>Bubble Sort</button>
             <button onClick={refreshDisplay}>Refresh</button>
 
-        </Layout>
+        </div>
     )
 }
 
