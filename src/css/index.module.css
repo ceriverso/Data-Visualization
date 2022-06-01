@@ -3,15 +3,17 @@
     line-height: 1.5em;
     font-size: 1.2em;
     font-family: 'Playfair Display', serif;
-    z-index: 1;
+   
     position: relative;
+    z-index: 1;
 }
 
 .indexContainer{
     position: relative;
+   
 }
 
 .background{
     z-index: 0;
-    height: 500px;
+    height: 50px;
 }

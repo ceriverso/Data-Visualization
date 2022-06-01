@@ -9,8 +9,7 @@ function Home() {
           className={style.background}
           src="/images/background-image.jpg"
           alt="Background Image"
-          height="100%"
-          width="100%"
+          layout="fill"
           objectFit="cover"
           objectPosition="center"
           />
