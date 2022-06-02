@@ -3,10 +3,9 @@
 .navBar{
     display: flex;
     justify-content: space-evenly;
-    padding-top: 2em;
     background-color: black;
     height: 60px;
-    border: 5px solid #89DDff;
+    position: relative;
 }
 
 .links{

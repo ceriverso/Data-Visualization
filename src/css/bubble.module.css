@@ -1,21 +1,27 @@
 
 
-
+.topContainer{
+    display: flex;
+    justify-content: center;
+}
 
 
 .bar{
-    background-color: greenyellow;
-    margin-bottom: 1%;
+    background-color: #89DDff;
+    margin: 1%;
     font-size: x-large;
 }
 
-.container{
+.bubbleContainer{
     display: flex;
-    margin-top: 10%;
+    height: 50%;
+    position: relative;
+    z-index: 1;
 }
 
 .leftDisplay{
-    width: 75%;
+    display: flex;
+    width: 100%;
 }
 
 .rightDisplay{
@@ -24,13 +30,17 @@
 
 .newArray{
     display: flex;
-    color: orange;
-    margin-bottom: 1em;
+    color: #89DDff;
+    font-size:xx-large;
+    width: 100%;
+    justify-content: center;
 }
 
 
 .row{
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 
@@ -42,7 +52,7 @@
 }
 
 .textTwo{
-    font-size: 1.7em;
+    font-size: large;
     color: blue;
     margin: 0;
     margin-bottom: 1em;
@@ -50,13 +60,13 @@
 
 
 .bottomText{
-    font-size: 1.7em;
+    font-size: large;
     color: greenyellow;
     margin: 0;
 }
 
 .bottomTextTwo{
-    font-size: 1.7em;
+    font-size:large;
     color: orange;
     margin: 0;
 }

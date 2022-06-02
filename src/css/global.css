@@ -6,3 +6,8 @@ body{
 .selected{
     display: none;
 }
+
+.background{
+    z-index: 0;
+    opacity: 40%;
+}

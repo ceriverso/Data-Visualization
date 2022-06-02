@@ -31,10 +31,10 @@ function Bubble() {
                 console.log(speed.x)
                 //The element we are testing turns red
                 document.getElementById(i).style.backgroundColor = "red";
-                document.getElementById(`caption${i}`).innerText = "<<<=== arr[i]"
+                // document.getElementById(`caption${i}`).innerText = "<<<=== arr[i]"
                 if (document.getElementById(i + 1) !== null) {
-                    document.getElementById(i + 1).style.backgroundColor = "blue";
-                    document.getElementById(`caption${i + 1}`).innerText = "<<<=== arr[i + 1]";
+                    document.getElementById(i + 1).style.backgroundColor = "white";
+                    // document.getElementById(`caption${i + 1}`).innerText = "<<<=== arr[i + 1]";
                 }
 
 
@@ -59,12 +59,12 @@ function Bubble() {
                     setBottomTextTwo("They stay where they are and the loop continues to next element");
                    await new Promise(resolve => setTimeout(resolve, speed.x));
                 }
-                document.getElementById(i).style.backgroundColor = "greenyellow";
-                document.getElementById(`caption${i}`).innerText = "";
+                document.getElementById(i).style.backgroundColor = "#89DDff";
+                // document.getElementById(`caption${i}`).innerText = "";
 
                 if (document.getElementById(i + 1) !== null) {
                     document.getElementById(i + 1).style.backgroundColor = "red";
-                    document.getElementById(`caption${i + 1}`).innerText = "<<<=== arr[i]";
+                    //document.getElementById(`caption${i + 1}`).innerText = "<<<=== arr[i]";
                 }
                 setText("");
                 setTextTwo("");
@@ -82,13 +82,14 @@ function Bubble() {
 
     const display = newRandomArray.map((bar, index) => {
         return (
-            <div className={style.row} key={index}>
-
-                <div className={style.bar} id={`${index}`} style={{ width: `${bar * 4}%`, height: `${bar * 8}%` }}>
+            // <div className={style.row} key={index}>
+            <>
+                <div className={style.bar} key={index} id={`${index}`} style={{ width: `${bar * 4}%`, height: `${bar * 8}%` }}>
                     {bar}
                 </div>
-                <span id={`caption${index}`}></span>
-            </div>
+                {/* <span id={`caption${index}`}></span> */}
+                </>
+            //</div>
         )
     });
 
@@ -97,45 +98,7 @@ function Bubble() {
         <div>
 
             <Method method={"bubble"} />
-            <div className={style.container}>
-
-                <div className={style.leftDisplay}>
-                    <div className={style.newArray}>let arr = [{newRandomArray.toString()}]</div>
-                    {display}
-                </div>
-                <div className={style.rightDisplay}>
-                    <p className={style.text}>{text}</p>
-                    <p className={style.textTwo}>{textTwo}</p>
-                    <p className={style.bottomText}>{bottomText}</p>
-                    <p className={style.bottomTextTwo}>{bottomTextTwo}</p>
-                </div>
-            </div>
-            <div>
-      {speed.x}
-      
-      <Slider
-      styles={{
-        track: {
-          backgroundColor: 'blue'
-        },
-        active: {
-          backgroundColor: 'red'
-        },
-        thumb: {
-          width: 20,
-          height: 20
-        },
-        disabled: {
-          opacity: 0.5
-        }
-      }}
-        axis="x"
-        xmax={10000}
-        x={speed.x}
-        onChange={({ x }) => setSpeed(speed => ({ ...speed, x }))}
-      />
-      
-    </div>
+            <div className={style.topContainer}>
             <strong>Size</strong>
             <label className="dropdown">
                 <select className="form-control theme"
@@ -153,9 +116,57 @@ function Bubble() {
                     <option value="100">100</option>
                 </select>
             </label>
-
             <button onClick={bubbleSort}>Bubble Sort</button>
             <button onClick={refreshDisplay}>Refresh</button>
+            {speed.x}
+      
+      <Slider
+      styles={{
+        track: {
+          backgroundColor: '#89DDff'
+        },
+        active: {
+          backgroundColor: 'white'
+        },
+        thumb: {
+          width: 20,
+          height: 20
+        },
+        disabled: {
+          opacity: 0.5
+        }
+      }}
+        axis="x"
+        xmax={10000}
+        x={speed.x}
+        onChange={({ x }) => setSpeed(speed => ({ ...speed, x }))}
+      />
+      </div>
+            <div className={style.newArray}>Arr = [{newRandomArray.toString()}]</div>
+            <div className={style.bubbleContainer}>
+        
+                <div className={style.leftDisplay}>
+                <div className={style.new}>
+                <div>
+      
+      
+    </div>
+            
+
+            
+                </div>
+                    <div className={style.row}>
+                    {display}
+                    </div>
+                </div>
+                {/* <div className={style.rightDisplay}>
+                    <p className={style.text}>{text}</p>
+                    <p className={style.textTwo}>{textTwo}</p>
+                    <p className={style.bottomText}>{bottomText}</p>
+                    <p className={style.bottomTextTwo}>{bottomTextTwo}</p>
+                </div> */}
+            </div>
+           
 
         </div>
     )

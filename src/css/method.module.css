@@ -2,4 +2,9 @@
 .method{
     display: flex;
     justify-content: center;
+    
+}
+
+.method pre{
+    border: 2px solid #89DDff;
 }
