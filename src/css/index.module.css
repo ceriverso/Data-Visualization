@@ -1,19 +1,20 @@
 .greeting{
     color: #fcdf71;
+    text-align: center;
     line-height: 1.5em;
     font-size: 1.2em;
     font-family: 'Playfair Display', serif;
-   
     position: relative;
     z-index: 1;
+    padding: 0 40px 0 40px;
 }
 
 .indexContainer{
     position: relative;
-   
+   height: 100%;
 }
 
 .background{
     z-index: 0;
-    height: 50px;
+    opacity: 40%;
 }

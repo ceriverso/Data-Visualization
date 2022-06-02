@@ -1,9 +1,5 @@
 
-
 .method{
-background-color: black;
- border: solid gray;
- color: antiquewhite;
- min-height: 100px;
- text-align: center
+    display: flex;
+    justify-content: center;
 }

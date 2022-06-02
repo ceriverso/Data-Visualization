@@ -1,5 +1,4 @@
 import NavBar from "./NavBar";
-import Header from "./Header";
 import Footer from "./Footer";
 
 
@@ -22,7 +21,6 @@ function Layout({ children }) {
         
         <div className="Layout" style={layoutStyle}>
             <NavBar />
-            <Header />
             <div className="Content" style={contentStyle}>
                 {children}
             </div>

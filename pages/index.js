@@ -1,3 +1,4 @@
+import Header from "../src/components/Header";
 import style from "../src/css/index.module.css";
 import Image from "next/image";
 
@@ -5,12 +6,13 @@ function Home() {
   
   return (
   <div className={style.indexContainer}>
+    <Header />
   <Image
           className={style.background}
           src="/images/background-image.jpg"
           alt="Background Image"
           layout="fill"
-          objectFit="cover"
+          objectFit="fill"
           objectPosition="center"
           />
       <p className={style.greeting}>I have always been the type of person who needs to see something working for me to fully understand how it works. Unfortunately I also have a hard time visualizing things.

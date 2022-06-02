@@ -35,12 +35,9 @@ const handleClick = () => {
            
 
     return (
-        <Layout>
-            {/* {`Home`} */}
-            Insertion
+       <>
             {newArray}
-            <button onClick={handleClick}>Sort Me</button>
-        </Layout>
+        </>
     )
 }
 

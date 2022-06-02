@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import Layout from "../src/components/Layout";
-import Array from "./array";
 
 
 function Selection(props) {
@@ -40,13 +38,12 @@ function Selection(props) {
 
 
     return (
-        <Layout>
-            Selection
+       <>
             <Array childToParent={childToParent} />
             {arr}
             <button onClick={handleClick}>Sort Me</button>
             {sorted}
-        </Layout>
+            </>
     )
 }
 

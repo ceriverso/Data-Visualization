@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Layout from "../src/components/Layout";
+import React, { useState } from 'react';
 import Method from './method';
 import randomArray from "./randomArray";
-import style from '../src/css/array.module.css';
+import style from '../src/css/bubble.module.css';
 import Slider from 'react-input-slider';
 
 function Bubble() {
@@ -96,7 +95,6 @@ function Bubble() {
 
     return (
         <div>
-            <h1>Bubble Sort</h1>
 
             <Method method={"bubble"} />
             <div className={style.container}>

@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-evenly;
     padding-top: 2em;
-    background-color: #0098d3;
-    width: 100%;
+    background-color: black;
     height: 60px;
+    border: 5px solid #89DDff;
 }
 
 .links{
     text-decoration: none;
-    color:#fcdf71;
+    color:#89DDff;
     font-size: xx-large;
     font-family:'Playfair Display', serif;
 }
