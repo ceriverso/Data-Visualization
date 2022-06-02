@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const layoutStyle = {
     display: "flex",
+    position:"relative",
     flexFlow: "column",
     height: "100vh",
     width: "100%",
