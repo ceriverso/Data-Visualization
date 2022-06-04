@@ -3,8 +3,10 @@ import {materialDark} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import style from '../src/css/method.module.css';
 
 const methodStyle = {
-    fontSize:"larger",
-    width: "50%"
+    width: "50%",
+    margin: "0.5em 0px 1.5em 0px",
+    padding: "0",
+    border: "2px solid #89DDff"
 };
 
 function Method({ method }) {

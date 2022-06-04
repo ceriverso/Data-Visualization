@@ -1,32 +1,25 @@
 import { useState, useEffect } from "react";
 
-function randomArray(){
-
+function randomArray() {
     const [newRandomArray, setNewRandomArray] = useState([]);
     const [max, setMax] = useState(5);
-    const [refresh, setRefresh] = useState("false");   
-    useEffect(() =>{
+    const [refresh, setRefresh] = useState("false");
+    useEffect(() => {
         const getArray = () => {
-        //const max = 10;
-        const arr = [];
-
-        for (let i = 0; i < max;) {
-            let num = Math.floor(Math.random() * max + 1)
-            while (arr.includes(num) === false) {
-                arr.push(num)
-                i++
+            //const max = 10;
+            const arr = [];
+            for (let i = 0; i < max;) {
+                let num = Math.floor(Math.random() * max + 1)
+                while (arr.includes(num) === false) {
+                    arr.push(num)
+                    i++
+                }
             }
+            setNewRandomArray(arr)
         }
-        
-       setNewRandomArray(arr)
-       
-    }
-    getArray()
+        getArray()
     }, [refresh, max])
-    
-    
-    return { newRandomArray, setNewRandomArray, refresh, setRefresh, max, setMax}
-
+    return { newRandomArray, setNewRandomArray, refresh, setRefresh, max, setMax }
 }
 
 export default randomArray

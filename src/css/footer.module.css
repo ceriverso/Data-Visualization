@@ -1,7 +1,5 @@
 .footer{
     display:flex;
-    position: inherit;
-    bottom: 0;
     color: #89DDff;
     width: 100%;
     height: fit-content;
