@@ -30,6 +30,8 @@ function Layout({ children }) {
                 layout="fill"
                 objectFit="fill"
                 objectPosition="center"
+                priority="true"
+                quality="100"
             />
             <NavBar />
             <div className="Content" style={contentStyle}>

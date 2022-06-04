@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Method from './method';
 import randomArray from "./randomArray";
-import { RefreshButton, SortButton } from '../src/components/MyButtons.js';
+import {  SortButton, RefreshButton } from '../src/components/MyButtons.js';
 import MySlider from '../src/components/MySlider';
 import DropDown from '../src/components/DropDown';
 import style from '../src/css/bubble.module.css';
