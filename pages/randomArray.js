@@ -6,7 +6,6 @@ function randomArray() {
     const [refresh, setRefresh] = useState("false");
     useEffect(() => {
         const getArray = () => {
-            //const max = 10;
             const arr = [];
             for (let i = 0; i < max;) {
                 let num = Math.floor(Math.random() * max + 1)

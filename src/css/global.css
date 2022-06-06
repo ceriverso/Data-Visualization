@@ -11,3 +11,22 @@ body{
     z-index: 0;
     opacity: 40%;
 }
+
+/*******************SLIDER******************/
+
+.css-187mznn-MuiSlider-root{
+    height: 11px;
+}
+
+.css-eg0mwd-MuiSlider-thumb{
+    background-color: white;
+}
+
+.slider-title{
+    margin: 0;
+    color: #89DDff;
+}
+
+.css-ofrcno-MuiGrid-root>.MuiGrid-item{
+    color: #89DDff;
+}

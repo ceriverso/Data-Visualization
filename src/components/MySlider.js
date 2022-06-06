@@ -1,31 +1,37 @@
-import Slider from 'react-input-slider';
+//import Slider from 'react-input-slider';
+import PropTypes from 'prop-types';
+import Slider, { SliderThumb } from '@mui/material/Slider';
+import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 function MySlider({ speed, setSpeed }) {
-
+    const handleChange = (event, newValue) => {
+        setSpeed(newValue);
+    };
     return (
 
-        <Slider
-            styles={{
-                track: {
-                    backgroundColor: '#89DDff'
-                },
-                active: {
-                    backgroundColor: 'white'
-                },
-                thumb: {
-                    width: 20,
-                    height: 20
-                },
-                disabled: {
-                    opacity: 0.5
-                }
-            }}
-            axis="x"
-            xmax={10000}
-            x={speed}
-            onChange={({ x }) => setSpeed(speed => ({ ...speed, x }))}
-        />
-
+        <Box sx={{ width: "100%" }}>
+                <h4 className="slider-title">Speed</h4>
+                <Grid container spacing={2} alignItems="center">
+                <Grid item>0</Grid>
+                <Grid item xs={8}>
+                <Slider
+                    aria-label="Speed"
+                    size="large"
+                    step={500}
+                    marks
+                    max={5000}
+                    value={speed}
+                    valueLabelDisplay="auto"
+                    onChange={handleChange}
+                />
+                </Grid>
+                <Grid item>5000</Grid>
+            </Grid>
+        </Box>
     )
 }
 

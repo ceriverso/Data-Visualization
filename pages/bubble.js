@@ -1,30 +1,33 @@
 import React, { useState } from 'react';
 import Method from './method';
 import randomArray from "./randomArray";
-import { RefreshButton, SortButton } from '../src/components/MyButtons.js';
+import { SortButton, RefreshButton, ArraySizeButton } from '../src/components/MyButtons.js';
 import MySlider from '../src/components/MySlider';
-import DropDown from '../src/components/DropDown';
-import style from '../src/css/bubble.module.css';
+import Box from '@mui/material/Box';
+import styles from '../src/css/bubble.module.css';
 
 
 function Bubble() {
-    const [speed, setSpeed] = useState({ x: 1000 });
+    const [speed, setSpeed] = useState(1000);
     const [text, setText] = useState([]);
     const [textTwo, setTextTwo] = useState([]);
     const [bottomText, setBottomText] = useState([]);
     const [bottomTextTwo, setBottomTextTwo] = useState([])
     const { newRandomArray, setNewRandomArray, refresh, setRefresh, max, setMax } = randomArray();
 
+
+
+    // style={{ height: `${bar * 10}%`}}
     async function bubbleSort() {
-        await new Promise(resolve => setTimeout(resolve, speed.x));
+
         const arr = newRandomArray;
         let checked;
 
         do {
             checked = false
             for (let i = 0; i < arr.length; i++) {
-                await new Promise(resolve => setTimeout(resolve, speed.x));
-                console.log(speed.x)
+                await new Promise(resolve => setTimeout(resolve, speed));
+                console.log(speed)
                 //The element we are testing turns red
                 document.getElementById(i).style.backgroundColor = "red";
                 // document.getElementById(`caption${i}`).innerText = "<<<=== arr[i]"
@@ -34,23 +37,26 @@ function Bubble() {
                 }
                 if (arr[i] > arr[i + 1]) {
                     setText("If arr[i] is greater than arr[i + 1]")
-                    await new Promise(resolve => setTimeout(resolve, speed.x));
+                    await new Promise(resolve => setTimeout(resolve, speed));
                     setBottomText("They swap positions and the loop moves to the next element")
-                    await new Promise(resolve => setTimeout(resolve, speed.x));
-                    await new Promise(resolve => setTimeout(resolve, speed.x));
+                    await new Promise(resolve => setTimeout(resolve, speed));
+                    await new Promise(resolve => setTimeout(resolve, speed));
                     //Swap the elements in the array since element is less than the next element
                     let tmp = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = tmp;
+
                     //Is only changed to true when there is a swap made
+
                     checked = true
+
                 } else {
-                    await new Promise(resolve => setTimeout(resolve, speed.x));
+                    await new Promise(resolve => setTimeout(resolve, speed));
                     setText("");
                     setTextTwo("If arr[i] is less than arr[i + 1]");
-                    await new Promise(resolve => setTimeout(resolve, speed.x));
+                    await new Promise(resolve => setTimeout(resolve, speed));
                     setBottomTextTwo("They stay where they are and the loop continues to next element");
-                    await new Promise(resolve => setTimeout(resolve, speed.x));
+                    await new Promise(resolve => setTimeout(resolve, speed));
                 }
                 document.getElementById(i).style.backgroundColor = "#89DDff";
                 // document.getElementById(`caption${i}`).innerText = "";
@@ -73,8 +79,12 @@ function Bubble() {
 
     const display = newRandomArray.map((bar, index) => {
         return (
-            <div className={style.bar} key={index} id={`${index}`} style={{ width: `${bar * 4}%`, height: `${bar * 8}%` }}>
-                {bar}
+            <div className={styles.bar} key={index} id={`${index}`} >
+                <span className={styles.test} style={{ height: `${bar * 2}em` }}></span>
+                <i className={styles.cap}></i><i className={styles.fill} ></i>
+                <div className={styles.base}>
+                    <div className={styles.text}>{bar}</div>
+                </div>
             </div>
             // <span id={`caption${index}`}></span>
         )
@@ -84,22 +94,29 @@ function Bubble() {
     return (
         <div>
             <Method method={"bubble"} />
-            <div className={style.topContainer}>
-                <DropDown max={max} setMax={setMax} />
-                <SortButton sortMethod={bubbleSort} />
-                <RefreshButton refresh={refresh} setRefresh={setRefresh} />
-                <MySlider speed={speed} setSpeed={setSpeed} />
+            <div className={styles.topContainer}>
+                <Box sx={{ width: "60%" }}>
+                    <ArraySizeButton arraySize={5} setMax={setMax} />
+                    <ArraySizeButton arraySize={10} setMax={setMax} />
+                    <ArraySizeButton arraySize={15} setMax={setMax} />
+                    <ArraySizeButton arraySize={20} setMax={setMax} />
+                    <SortButton sortMethod={bubbleSort} />
+                    <RefreshButton refresh={refresh} setRefresh={setRefresh} />
+                </Box>
+                <Box sx={{ width: "40%" }}>
+                    <MySlider speed={speed} setSpeed={setSpeed} />
+                </Box>
             </div>
-            <div className={style.newArray}>
+            <div className={styles.newArray}>
                 Arr = [{newRandomArray.toString()}]
             </div>
-            <div className={style.bubbleContainer}>
-                <div className={style.leftDisplay}>
-                    <div className={style.new}>
+            <div className={styles.bubbleContainer}>
+                <div className={styles.leftDisplay}>
+                    <div className={styles.new}>
                         <div>
                         </div>
                     </div>
-                    <div className={style.row}>
+                    <div className={styles.row}>
                         {display}
                     </div>
                 </div>
