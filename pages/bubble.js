@@ -80,11 +80,12 @@ function Bubble() {
     const display = newRandomArray.map((bar, index) => {
         return (
             <div className={styles.bar} key={index} id={`${index}`} >
+                <i className={styles.cap}></i>
+                
                 <span className={styles.test} style={{ height: `${bar * 2}em` }}></span>
-                <i className={styles.cap}></i><i className={styles.fill} ></i>
-                <div className={styles.base}>
-                    <div className={styles.text}>{bar}</div>
-                </div>
+                <i className={styles.fill} ></i>
+               
+                <div className={`${styles.cap} ${styles.capBottom}`}><div>{bar}</div></div>
             </div>
             // <span id={`caption${index}`}></span>
         )

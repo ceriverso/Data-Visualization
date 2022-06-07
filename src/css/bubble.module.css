@@ -23,17 +23,16 @@
     position: relative;
 }
 .bar::before{
-    --blur: 4px;
     content: '';
     position: absolute;
     width: inherit;
     z-index: -1;
-    right: var(--blur);
+    right: 10px;
     bottom: 0;
     height: calc(.5rem * 2);
-    background: rgb(0 0 0 / .25);
+    background: rgb(0 0 0 / .75 );
     border-radius: inherit;
-    filter: blur(var(--blur));
+    filter: blur(10px);
 }
 
 .bar>.cap{
@@ -56,6 +55,29 @@
     border-radius: 50%;
     top: calc(.5rem * -1);
 }
+
+.bar>.capBottom{
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.bar>.capBottom::after{
+    z-index: 2;
+    background:
+        linear-gradient(
+            to right,
+            rgb(0 0 0 / .25),
+            transparent 10% 15%,
+            rgb(255 255 255 / .5) 20%,
+            transparent 50% 90%,
+            rgb(0 0 0 / .125) 
+        );
+    background-color:#89DDff;
+}
+
 
 .bar>.base{
     border-bottom-left-radius: inherit;
@@ -141,11 +163,13 @@
   animation: fill-before var(--anim-duration) linear forwards
 }
 
-.bar>.fill::after{
+.test2{
+    bottom: 1;
+    height: 30px;
     content: "";
     position: absolute;
     width: 100%;
-    background-color: var(--fill-color);
+    background-color: #89DDff;
     border-radius: 50%;
     --fill-start: calc(.5rem * -1);
     --fill-end: calc(var(--percent) * 1% - .5rem);
