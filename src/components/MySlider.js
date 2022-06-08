@@ -14,9 +14,9 @@ function MySlider({ speed, setSpeed }) {
     return (
 
         <Box sx={{ width: "100%" }}>
-                <h4 className="slider-title">Speed</h4>
+                
                 <Grid container spacing={2} alignItems="center">
-                <Grid item>0</Grid>
+                <Grid item>Speed</Grid>
                 <Grid item xs={8}>
                 <Slider
                     aria-label="Speed"
@@ -29,7 +29,6 @@ function MySlider({ speed, setSpeed }) {
                     onChange={handleChange}
                 />
                 </Grid>
-                <Grid item>5000</Grid>
             </Grid>
         </Box>
     )

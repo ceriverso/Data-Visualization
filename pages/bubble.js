@@ -29,10 +29,10 @@ function Bubble() {
                 await new Promise(resolve => setTimeout(resolve, speed));
                 console.log(speed)
                 //The element we are testing turns red
-                document.getElementById(i).style.backgroundColor = "red";
+                //document.getElementById(i).style.backgroundColor = "red";
                 // document.getElementById(`caption${i}`).innerText = "<<<=== arr[i]"
                 if (document.getElementById(i + 1) !== null) {
-                    document.getElementById(i + 1).style.backgroundColor = "white";
+                    //document.getElementById(i + 1).style.backgroundColor = "white";
                     // document.getElementById(`caption${i + 1}`).innerText = "<<<=== arr[i + 1]";
                 }
                 if (arr[i] > arr[i + 1]) {
@@ -58,11 +58,11 @@ function Bubble() {
                     setBottomTextTwo("They stay where they are and the loop continues to next element");
                     await new Promise(resolve => setTimeout(resolve, speed));
                 }
-                document.getElementById(i).style.backgroundColor = "#89DDff";
+                // document.getElementById(i).style.backgroundColor = "#89DDff";
                 // document.getElementById(`caption${i}`).innerText = "";
 
                 if (document.getElementById(i + 1) !== null) {
-                    document.getElementById(i + 1).style.backgroundColor = "red";
+                   // document.getElementById(i + 1).style.backgroundColor = "red";
                     //document.getElementById(`caption${i + 1}`).innerText = "<<<=== arr[i]";
                 }
                 setText("");
@@ -94,34 +94,27 @@ function Bubble() {
 
     return (
         <div>
-            <Method method={"bubble"} />
+            <Method method={"bubble"} newRandomArray={newRandomArray}/>
             <div className={styles.topContainer}>
-                <Box sx={{ width: "60%" }}>
+                <Box sx={{ width: "33%", marginLeft:"2em" }}>
                     <ArraySizeButton arraySize={5} setMax={setMax} />
                     <ArraySizeButton arraySize={10} setMax={setMax} />
-                    <ArraySizeButton arraySize={15} setMax={setMax} />
-                    <ArraySizeButton arraySize={20} setMax={setMax} />
                     <SortButton sortMethod={bubbleSort} />
                     <RefreshButton refresh={refresh} setRefresh={setRefresh} />
                 </Box>
-                <Box sx={{ width: "40%" }}>
+                <Box className={styles.newArray} sx={{ width: "33%" }}>
+                Arr = [{newRandomArray.toString()}]
+                </Box>
+                <Box sx={{ width: "33%" }}>
                     <MySlider speed={speed} setSpeed={setSpeed} />
                 </Box>
             </div>
-            <div className={styles.newArray}>
-                Arr = [{newRandomArray.toString()}]
-            </div>
-            <div className={styles.bubbleContainer}>
-                <div className={styles.leftDisplay}>
-                    <div className={styles.new}>
-                        <div>
-                        </div>
-                    </div>
+            
+            
                     <div className={styles.row}>
                         {display}
                     </div>
-                </div>
-            </div>
+                
         </div>
     )
 }

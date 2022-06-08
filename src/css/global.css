@@ -1,6 +1,7 @@
 
 body{
-    background-color: #C2C9CF;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
 }
 
 .selected{
@@ -12,10 +13,16 @@ body{
     opacity: 40%;
 }
 
+pre{
+    width: fit-content;
+    padding: 20px;
+}
+
 /*******************SLIDER******************/
 
 .css-187mznn-MuiSlider-root{
-    height: 11px;
+    height: 20px;
+    padding-top: 0;
 }
 
 .css-eg0mwd-MuiSlider-thumb{
@@ -30,3 +37,27 @@ body{
 .css-ofrcno-MuiGrid-root>.MuiGrid-item{
     color: #89DDff;
 }
+
+/*******************Navbar******************/
+
+.css-h4y409-MuiList-root{
+    padding-bottom: 90px;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    background-color: #89DDff;
+    height: fit-content;
+}
+
+
+/*******************Button**********************/
+
+.css-11qr2p8-MuiButtonBase-root-MuiButton-root{
+    border-radius: 30px;
+    background-color: #89DDff;
+    color: black;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+

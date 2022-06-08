@@ -10,7 +10,7 @@
     --bar-color: #fff;
     --anim-duration: 3s;
     width: var(--width);
-    height: 50%;
+    height: 100%;
     aspect-ratio: 1/4.5;
     margin-top: .5rem;
     margin-right: 1em;
@@ -204,8 +204,8 @@
 .newArray{
     display: flex;
     color: #89DDff;
-    font-size:xx-large;
-    width: 100%;
+    font-size:x-large;
+    line-height: normal;
     justify-content: center;
 }
 
@@ -213,7 +213,9 @@
 .row{
     display: flex;
     justify-content: center;
+    height: 12em;
     width: 100%;
+    margin-top: 2%;
 }
 
 .textTwo{

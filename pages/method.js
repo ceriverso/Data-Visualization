@@ -3,13 +3,13 @@ import {materialDark} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import style from '../src/css/method.module.css';
 
 const methodStyle = {
-    width: "50%",
     margin: "0.5em 0px 1.5em 0px",
-    padding: "0",
+    padding: "10px",
+    paddingBottom: "0px",
     border: "2px solid #89DDff"
 };
 
-function Method({ method }) {
+function Method({ method}) {
     let display;
     if (method == "bubble") {
         display = `let checked;
