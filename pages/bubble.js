@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Method from './method';
 import randomArray from "./randomArray";
-import { SortButton, RefreshButton, ArraySizeButton } from '../src/components/MyButtons.js';
+import { ButtonBox, SortButton, RefreshButton, ArraySizeButton } from '../src/components/MyButtons.js';
 import MySlider from '../src/components/MySlider';
 import Box from '@mui/material/Box';
 import styles from '../src/css/bubble.module.css';
@@ -62,7 +62,7 @@ function Bubble() {
                 // document.getElementById(`caption${i}`).innerText = "";
 
                 if (document.getElementById(i + 1) !== null) {
-                   // document.getElementById(i + 1).style.backgroundColor = "red";
+                    // document.getElementById(i + 1).style.backgroundColor = "red";
                     //document.getElementById(`caption${i + 1}`).innerText = "<<<=== arr[i]";
                 }
                 setText("");
@@ -81,40 +81,31 @@ function Bubble() {
         return (
             <div className={styles.bar} key={index} id={`${index}`} >
                 <i className={styles.cap}></i>
-                
-                <span className={styles.test} style={{ height: `${bar * 2}em` }}></span>
+
+                <span className={styles.test} style={bar > 3 ? {height: `${bar * 15}%`} : {height: `${(bar + 7) * 5}%`} }></span>
                 <i className={styles.fill} ></i>
-               
+
                 <div className={`${styles.cap} ${styles.capBottom}`}><div>{bar}</div></div>
             </div>
             // <span id={`caption${index}`}></span>
         )
     });
 
-
+    
     return (
         <div>
-            <Method method={"bubble"} newRandomArray={newRandomArray}/>
-            <div className={styles.topContainer}>
-                <Box sx={{ width: "33%", marginLeft:"2em" }}>
-                    <ArraySizeButton arraySize={5} setMax={setMax} />
-                    <ArraySizeButton arraySize={10} setMax={setMax} />
-                    <SortButton sortMethod={bubbleSort} />
-                    <RefreshButton refresh={refresh} setRefresh={setRefresh} />
-                </Box>
-                <Box className={styles.newArray} sx={{ width: "33%" }}>
-                Arr = [{newRandomArray.toString()}]
-                </Box>
-                <Box sx={{ width: "33%" }}>
-                    <MySlider speed={speed} setSpeed={setSpeed} />
-                </Box>
+
+            <Box sx={{ display: "flex" }}>
+                <ButtonBox sortMethod={bubbleSort} refresh={refresh} setRefresh={setRefresh} setMax={setMax} speed={speed} setSpeed={setSpeed} />
+                <Method method={"bubble"} newRandomArray={newRandomArray} />
+            </Box>
+            <Box className={styles.newArray}>
+                        [{newRandomArray.toString()}]
+                    </Box>
+            <div className={styles.row}>
+                {display}
             </div>
-            
-            
-                    <div className={styles.row}>
-                        {display}
-                    </div>
-                
+       
         </div>
     )
 }

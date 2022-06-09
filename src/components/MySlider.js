@@ -1,10 +1,4 @@
-//import Slider from 'react-input-slider';
-import PropTypes from 'prop-types';
 import Slider, { SliderThumb } from '@mui/material/Slider';
-import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
 function MySlider({ speed, setSpeed }) {
@@ -12,12 +6,9 @@ function MySlider({ speed, setSpeed }) {
         setSpeed(newValue);
     };
     return (
-
-        <Box sx={{ width: "100%" }}>
-                
-                <Grid container spacing={2} alignItems="center">
-                <Grid item>Speed</Grid>
-                <Grid item xs={8}>
+        <Grid container spacing={2} alignItems="center">
+            <Grid item>Speed</Grid>
+            <Grid item xs={8}>
                 <Slider
                     aria-label="Speed"
                     size="large"
@@ -28,9 +19,9 @@ function MySlider({ speed, setSpeed }) {
                     valueLabelDisplay="auto"
                     onChange={handleChange}
                 />
-                </Grid>
             </Grid>
-        </Box>
+        </Grid>
+
     )
 }
 

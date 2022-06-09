@@ -1,7 +1,9 @@
 
 body{
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    background-color: rgb(246, 230, 230);
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    
 }
 
 .selected{
@@ -14,8 +16,14 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0
 }
 
 pre{
-    width: fit-content;
+    width: 80%;
     padding: 20px;
+}
+
+/*******************NAVBAR******************/
+
+.css-ciy9n4-MuiPaper-root-MuiAppBar-root{
+    background-color: #0d0c22,
 }
 
 /*******************SLIDER******************/
@@ -25,13 +33,17 @@ pre{
     padding-top: 0;
 }
 
-.css-eg0mwd-MuiSlider-thumb{
-    background-color: white;
+.css-1gv0vcd-MuiSlider-track {
+    background-color: orangered;
 }
 
-.slider-title{
-    margin: 0;
-    color: #89DDff;
+.css-14pt78w-MuiSlider-rail{
+    background-color: #89DDff;
+    opacity: 1;
+}
+
+.css-eg0mwd-MuiSlider-thumb{
+    background-color: white;
 }
 
 .css-ofrcno-MuiGrid-root>.MuiGrid-item{
@@ -52,10 +64,12 @@ pre{
 
 /*******************Button**********************/
 
+
+
 .css-11qr2p8-MuiButtonBase-root-MuiButton-root{
     border-radius: 30px;
-    background-color: #89DDff;
-    color: black;
+    background-color: orangered;
+    color: #0d0c22;
     margin-left: 3px;
     margin-right: 3px;
 }

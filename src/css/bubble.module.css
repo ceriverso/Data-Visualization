@@ -1,9 +1,4 @@
 
-
-.topContainer{
-    display: flex;
-}
-
 .bar {
     --width: 4rem;
     --skew: .5rem;
@@ -75,7 +70,7 @@
             transparent 50% 90%,
             rgb(0 0 0 / .125) 
         );
-    background-color:#89DDff;
+    background-color:orangered;
 }
 
 
@@ -145,7 +140,7 @@
     width: 100%;
     --fill-start: .5rem;
     --fill-end: calc(var(100%) * 1% + .5rem);
-    background-color: #89DDff;
+    background-color: orangered;
     bottom: 0;
     border-bottom-left-radius: 50% .5rem;
     border-bottom-right-radius: 50% .5rem;
@@ -169,7 +164,7 @@
     content: "";
     position: absolute;
     width: 100%;
-    background-color: #89DDff;
+    background-color: orangered;
     border-radius: 50%;
     --fill-start: calc(.5rem * -1);
     --fill-end: calc(var(--percent) * 1% - .5rem);
@@ -203,9 +198,10 @@
 
 .newArray{
     display: flex;
-    color: #89DDff;
+    color: #0d0c22;
     font-size:x-large;
     line-height: normal;
+    letter-spacing: 10px;
     justify-content: center;
 }
 
@@ -213,7 +209,7 @@
 .row{
     display: flex;
     justify-content: center;
-    height: 12em;
+    height: 15em;
     width: 100%;
     margin-top: 2%;
 }
