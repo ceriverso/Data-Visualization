@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Method from './method';
 import randomArray from "./randomArray";
 import { ButtonBox, SortButton, RefreshButton, ArraySizeButton } from '../src/components/MyButtons.js';
-import MySlider from '../src/components/MySlider';
 import Box from '@mui/material/Box';
 import styles from '../src/css/bubble.module.css';
 
