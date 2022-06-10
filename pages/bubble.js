@@ -81,7 +81,7 @@ function Bubble() {
             <div className={styles.bar} key={index} id={`${index}`} >
                 <i className={styles.cap}></i>
 
-                <span className={styles.test} style={bar > 3 ? {height: `${bar * 15}%`} : {height: `${(bar + 7) * 5}%`} }></span>
+                <span className={styles.test} style={newRandomArray.length < 10 && bar > 3 ? {height: `${bar * 15}%`} : {height: `${(bar + 7) * 5}%`} }></span>
                 <i className={styles.fill} ></i>
 
                 <div className={`${styles.cap} ${styles.capBottom}`}><div>{bar}</div></div>
@@ -96,7 +96,7 @@ function Bubble() {
 
             <Box sx={{ display: "flex" }}>
                 <ButtonBox sortMethod={bubbleSort} refresh={refresh} setRefresh={setRefresh} setMax={setMax} speed={speed} setSpeed={setSpeed} />
-                <Method method={"bubble"} newRandomArray={newRandomArray} />
+                <Method method={"bubble"} />
             </Box>
             <Box className={styles.newArray}>
                         [{newRandomArray.toString()}]

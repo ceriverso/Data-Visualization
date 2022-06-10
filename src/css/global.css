@@ -1,6 +1,11 @@
 
 body{
     background-color: rgb(246, 230, 230);
+    background-image: url("../img/b.jpg") ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:auto;
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     
@@ -22,9 +27,14 @@ pre{
 
 /*******************NAVBAR******************/
 
-.css-ciy9n4-MuiPaper-root-MuiAppBar-root{
-    background-color: #0d0c22,
+.css-11lq3yg-MuiGrid-root{
+    cursor: pointer;
 }
+
+.css-h4y409-MuiList-root{
+    font-size: 1em;
+}
+
 
 /*******************SLIDER******************/
 
@@ -59,6 +69,7 @@ pre{
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
     background-color: #89DDff;
     height: fit-content;
+    width: fit-content;
 }
 
 

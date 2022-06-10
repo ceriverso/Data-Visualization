@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
+import Link from './Link';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -17,6 +17,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Grid from '@mui/material/Grid';
+import ScienceIcon from '@mui/icons-material/Science';
+import CalculateIcon from '@mui/icons-material/Calculate';
 
 
 const drawerWidth = 240;
@@ -44,7 +47,7 @@ const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
     backgroundColor: "#0d0c22",
-    color:"#89DDff",
+    color: "#89DDff",
     transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -94,9 +97,9 @@ export default function PersistentDrawerLeft() {
                     >
                         <MenuIcon />
                     </IconButton>
-                   
-                        <h3>Sort Method Visualizer</h3>
-                    
+
+                    <h3>Sort Method Visualizer</h3>
+
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -121,35 +124,46 @@ export default function PersistentDrawerLeft() {
                 <List>
 
                     <ListItem disablePadding>
-                        <ListItemButton component={Link} to="/">
-                            <ListItemIcon>
-                                <HomeIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Home" />
-                        </ListItemButton>
+                        <Link href="/">
+                        <Grid container sx={{cursor:"pointer"}} >
+                                <Grid item>
+                                    <HomeIcon />
+                                </Grid>
+                                <Grid item>
+                                    <span>Home</span>
+                                </Grid>
+                            </Grid>
+                        </Link>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={Link} to="/bubble">
-                            <ListItemIcon>
-                                <HomeIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Bubble Sort" />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={Link} to="/quicksort">
-                            <ListItemIcon>
-                                <HomeIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Quick Sort" />
-                        </ListItemButton>
-                    </ListItem>
-                    
 
+                    <ListItem disablePadding>
+                        <Link href="/bubble">
+                            <Grid container sx={{cursor:"pointer"}}>
+                                <Grid item>
+                                    <ScienceIcon />
+                                </Grid>
+                                <Grid item>
+                                    <span>Bubble Sort</span>
+                                </Grid>
+                            </Grid>
+                        </Link>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link href="">
+                        <Grid container sx={{cursor:"pointer"}}>
+                                <Grid item>
+                                    <CalculateIcon />
+                                </Grid>
+                                <Grid item>
+                                    <span>Quick Sort</span>
+                                </Grid>
+                            </Grid>
+                        </Link>
+                    </ListItem>
                 </List>
                 <Divider />
             </Drawer>
-            <Main open={open} style={{padding:"0px"}}>
+            <Main open={open} style={{ padding: "0px" }}>
                 <DrawerHeader />
 
             </Main>
