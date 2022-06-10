@@ -1,11 +1,11 @@
 
 body{
     background-color: rgb(246, 230, 230);
-    background-image: url("../img/b.jpg") ;
+    background-image: url("/images/it.jpg") ;
+    background-size:cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size:auto;
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     
