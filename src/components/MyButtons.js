@@ -46,17 +46,7 @@ const ArraySizeButton = ({ arraySize, setMax }) => (
 )
 
 const ButtonBox = ({ sortMethod, refresh, setRefresh, setMax, speed, setSpeed }) => (
-  <Box sx={{
-    backgroundColor: "#0d0c22",
-    color: "#89DDff",
-    width: "15em",
-    margin: 'auto',
-    padding:"10px",
-    borderRadius:"10px",
-    '&:hover': {
-        border: '5px solid white'
-    },
-}} >
+  <Box className="buttonox" >
     <List sx={{margin: 'auto'}}>
       <ListItem >
         <ListItemText primary="Array Size" disableTypography/>

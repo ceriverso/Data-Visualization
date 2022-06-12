@@ -1,0 +1,81 @@
+
+body{
+    background-color: rgb(246, 230, 230);
+    background-image: url("/images/it.jpg") ;
+    background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    
+}
+
+.selected{
+    display: none;
+}
+
+.background{
+    z-index: 0;
+    opacity: 40%;
+}
+
+pre{
+    width: 80%;
+    padding: 20px;
+}
+
+/*******************NAVBAR******************/
+
+.css-11lq3yg-MuiGrid-root{
+    cursor: pointer;
+}
+
+.css-h4y409-MuiList-root{
+    font-size: 1em;
+    padding-bottom: 90px;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    background-color: #89DDff;
+    height: fit-content;
+    width: fit-content;
+}
+
+/*******************SLIDER******************/
+
+.css-187mznn-MuiSlider-root{
+    height: 20px;
+    padding-top: 0;
+}
+
+.css-1gv0vcd-MuiSlider-track {
+    background-color: orangered;
+}
+
+.css-14pt78w-MuiSlider-rail{
+    background-color: #89DDff;
+    opacity: 1;
+}
+
+.css-eg0mwd-MuiSlider-thumb{
+    background-color: white;
+}
+
+.css-ofrcno-MuiGrid-root>.MuiGrid-item{
+    color: #89DDff;
+}
+
+/*******************Button**********************/
+
+
+
+.css-11qr2p8-MuiButtonBase-root-MuiButton-root{
+    border-radius: 30px;
+    background-color: orangered;
+    color: #0d0c22;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+

@@ -46,8 +46,10 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
-    backgroundColor: "#0d0c22",
-    color: "#89DDff",
+    // backgroundColor: "#0d0c22",
+    backgroundColor: "black",
+    // color: "#89DDff",
+    color: "white",
     transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -85,7 +87,7 @@ export default function PersistentDrawerLeft() {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
+            
             <AppBar position="fixed" open={open}>
                 <Toolbar>
                     <IconButton

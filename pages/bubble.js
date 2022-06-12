@@ -76,20 +76,31 @@ function Bubble() {
         } while (checked)
     }
 
+    // const display = newRandomArray.map((bar, index) => {
+    //     return (
+    //         <div className={styles.bar} key={index} id={`${index}`} >
+    //             <i className={styles.cap}></i>
+
+    //             <span className={styles.test} style={newRandomArray.length < 10 && bar > 3 ? {height: `${bar * 15}%`} : {height: `${(bar + 7) * 5}%`} }></span>
+    //             <i className={styles.fill} ></i>
+
+    //             <div className={`${styles.cap} ${styles.capBottom}`}><div>{bar}</div></div>
+    //         </div>
+    //         // <span id={`caption${index}`}></span>
+    //     )
+    // });
+
     const display = newRandomArray.map((bar, index) => {
         return (
-            <div className={styles.bar} key={index} id={`${index}`} >
-                <i className={styles.cap}></i>
-
-                <span className={styles.test} style={newRandomArray.length < 10 && bar > 3 ? {height: `${bar * 15}%`} : {height: `${(bar + 7) * 5}%`} }></span>
-                <i className={styles.fill} ></i>
-
-                <div className={`${styles.cap} ${styles.capBottom}`}><div>{bar}</div></div>
-            </div>
-            // <span id={`caption${index}`}></span>
+            <div className="tube" data-percent="50" key={index} id={`${index}`} >
+        <i className="cap"></i><i className="fill"></i>
+        <div className="base">
+            <div className="text">{bar}</div>
+            <div className="icon">Base</div>
+        </div>
+    </div>
         )
     });
-
     
     return (
         <div>
@@ -104,6 +115,8 @@ function Bubble() {
             <div className={styles.row}>
                 {display}
             </div>
+            
+  
        
         </div>
     )

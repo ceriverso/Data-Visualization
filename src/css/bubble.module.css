@@ -17,6 +17,7 @@
     grid-template-rows: max-content auto max-content;
     position: relative;
 }
+
 .bar::before{
     content: '';
     position: absolute;
